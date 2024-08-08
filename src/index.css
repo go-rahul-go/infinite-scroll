@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        background-color: #13171d;
+        background-image: url("./assets/pexels-brett-sayles-1393776.jpg");
+        background-attachment: fixed;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        scroll-behavior: smooth;
+       
+    }
+
+    .prod-card {
+        background-color: #c2c2c291;
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+    }
+    .observer{
+        position: relative;
+        z-index:2
+    }
+    .mouse-ani-hide{
+        display: none;
+    }
+    .mouse-ani-box {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 80px;
+        /* border:2px solid rgb(110, 110, 111); */
+        bottom: 15px;
+        left: 0;
+        display: grid;
+        place-items: center;
+
+    }
+
+    .mouse-ani {
+        width: 40px;
+        height: 60px;
+        /* border: 2px solid rgb(236, 236, 236); */
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        background-color: rgba(98, 98, 98, 0.571);
+
+    }
+
+    #mouse-child {
+        width: 6px;
+        height: 6px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        top: 10px;
+        animation: ghost 1500ms ease-in infinite;
+
+    }
+
+    @keyframes ghost {
+        0% {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: rotate(45deg);
+            top:50px;
+            opacity: 0;
+
+        }
+
+    }
+    .card-text{
+        /* -webkit-text-stroke:3px rgb(0, 51, 255); */
+        color:rgb(1, 9, 152);
+        position: absolute;
+        bottom:-10px;
+        right:-5px;
+
+    }
+    .top{
+        width:50px;
+        height:50px;
+       border-radius: 50%;
+        position: fixed;
+        z-index:1;
+        right:10px;
+        bottom:20px;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        background-color: black;
+        transition: all 150ms ease-in;
+    }
+    .top:hover{
+        transform: scale(1.1);
+    }
+}
